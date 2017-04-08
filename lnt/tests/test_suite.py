@@ -621,6 +621,15 @@ class TestSuiteTest(BuiltinTest):
             if 'TEST_SUITE_RUN_TYPE' not in defs:
                 defs['TEST_SUITE_RUN_TYPE'] = 'ref'
 
+        # Problem Size
+        if self.opts.test_size != "regular":
+            if self.opts.test_size == "large":
+                defs["LARGE_PROBLEM_SIZE"] = "On"
+            elif self.opts.test_size == "small":
+                defs["SMALL_PROBLEM_SIZE"] = "On"
+            else:
+                pass
+
         for item in self.opts.cmake_defines + extra_cmake_defs:
             k, v = item.split('=', 1)
             # make sure the overriding of the settings above also works
