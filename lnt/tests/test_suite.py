@@ -815,7 +815,8 @@ class TestSuiteTest(BuiltinTest):
             'score': 'score',
             'hash': 'hash',
             'link_time': 'compile',
-            'size.__text': 'code_size'
+            'size.__text': 'code_size', # Code size in Mach-O executables (Mac)
+            'size..text': 'code_size',  # Code size in ELF executables (Linux)
         }
         LIT_METRIC_CONV_FN = {
             'compile_time': float,
@@ -823,7 +824,8 @@ class TestSuiteTest(BuiltinTest):
             'score': float,
             'hash': str,
             'link_time': float,
-            'size.__text': float,
+            'size.__text': float, # Code size in Mach-O executables (Mac)
+            'size..text': float,  # Code size in ELF executables (Linux)
         }
 
         # We don't use the test info, currently.
