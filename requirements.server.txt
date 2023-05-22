@@ -5,4 +5,4 @@ psycopg2==2.5.3
 gunicorn==19.5.0
 heroku==0.1.4
 progressbar==2.3
-requests==2.20.0
+requests==2.31.0
